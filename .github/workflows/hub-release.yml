@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# WolOS Hub: a pushed version tag becomes a GitHub release with wonderlandos.stats-<version>.wolplug,
+# checked with the hub's own hubcheck first. Listing wonderlandos.stats (connected on hub.wolos.org as wonderlandos).
+# Tag: v<plugin.toml version>, e.g. v1.0.
+name: hub-release
+on:
+  push:
+    tags: ["v[0-9]*"]
+permissions:
+  contents: write
+jobs:
+  hub:
+    # Pinned to wonderlandos/hub 4e6f01f (wol-release.yml and tools/wolpack); move both pins together.
+    uses: wonderlandos/hub/.github/workflows/wol-release.yml@4e6f01f6599950f3a0b13ce93da8f0f4e4ead7b4
+    with:
+      tools_ref: 4e6f01f6599950f3a0b13ce93da8f0f4e4ead7b4
+      kind: plugin
+      id: wonderlandos.stats
+      set_id: wonderlandos.stats
