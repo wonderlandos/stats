@@ -1,7 +1,7 @@
 # Stats: the reference plugin (ADR 0031, docs/modules/plugins.md). CPU and memory in the menu
 # bar with a popover, a desktop card, and a shortcut that opens btop.
 schema = 1
-id = "org.wolos.stats"
+id = "wonderlandos.stats"
 name = "Stats"
 version = "1.0"
 author = "WolOS"
